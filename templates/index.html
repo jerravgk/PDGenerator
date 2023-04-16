@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>Product Description Generator</title>
   <link
     rel="shortcut icon"
     href="{{ url_for('static', filename='dog.png') }}"
@@ -10,12 +10,16 @@
 
 <body>
   <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
+  <h3>Generate a Product Description!</h3>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
+    <input type="text" name="product_name" placeholder="Enter a product name" required />
+    <input type="text" name="characteristics" placeholder="Enter the characteristics of the product" required />
+    <input type="submit" value="Generate!" />
   </form>
   {% if result %}
-  <div class="result">{{ result }}</div>
+  <div class="result">
+    <h2>Product description<br><br></h2>
+    {{ result | safe }}
+  </div>
   {% endif %}
 </body>

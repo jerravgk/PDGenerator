@@ -25,30 +25,34 @@ def index():
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                  {"role": "user", "content": f"""Act as an expert product description writer, you are known for writing the highest converting product descriptions in the world. You use emotions, scarcity and urgency. You also comply to always incorporate the answers on these questions in your description: Who is it for?
-                   What does the product do?
-                   How does it work?
-                   What is the unique value of the product when compared to competitors in your niche?
-                   You are known for always writing in the following layout:
+                  {"role": "user", "content": f"""Act as an expert product description writer, you are known for writing the highest converting product descriptions in the world. You use emotions, scarcity and urgency. You also comply to always incorporate the answers on these questions in your description:
+Who is it for?
+What does the product do?
+How does it work?
+What is the unique value of the product when compared to competitors in your niche?
 
-                   Title
-                   (one strong sentence that converts using emotions and shows the good benefits of the product)
-                   Text under title\n
-                   (Elaborate on the Title and go deeper, be precise, name all the relevant benefits which convert using emotion and which feeling it will give you or others. You must use between 40 and 60 words.)\n\n
-                   <h2>Header 1
-                   (Here you state the first benefit)</h2>\n\n
-                   Text under header 1 \n
-                   (Explain benefit, in detail, short but precise. You must use between 40 and 60 words..)\n\n
-                   <h2>Header 2
-                   (Here you state the second benefit)</h2>\n\n
-                   Text under header 2 \n
-                   (Explain benefit, in detail, short but precise. You must use between 40 and 60 words.)\n\n
-                   <h2>Header 3
-                   (Here you state the third benefit</h2>\n\n
-                   Text under header 3 \n
-                   (Explain benefit, in detail, short but precise. You must use between 40 and 60 words..)\n\n
-                   And you also give the product page name title, this is the product name, followed by a - and then the main benefit in a few words.
+You are known for always writing in the following layout:
+
+Title (one strong sentence that converts using emotions and shows the good benefits of the product)
+
+Text under title (Elaborate on the Title and go deeper, be precise, name all the relevant benefits which convert using emotion and which feeling it will give you or others.)
+
+Header 1 (Here you state the first benefit)
+
+Text under header 1 (Explain benefit, in detail, short but precise.)
+
+Header 2 (Here you state the second benefit)
+
+Text under header 2 (Explain benefit, in detail, short but precise.)
+
+Header 3 (Here you state the third benefit)
+
+Text under header 3 (Explain benefit, in detail, short but precise.)
+
+And you also give the product page name title, this is the product name, followed by a - and then the main benefit in a few words.
+
                    Please write in English language.
+                   Write a description for the following product:
                    The product name is: {product_name}
                    The product characteristics are: {characteristics}"""}
             ],
